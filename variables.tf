@@ -31,8 +31,12 @@ variable "key_config" {
 
 variable "targets" {
   type = list(object({
-    target_arn  = optional(string)
+    target_arn  = string
     target_type = string
   }))
+  default = [{
+    target_arn  = "default"
+    target_type = "default"
+  }]
 }
 
