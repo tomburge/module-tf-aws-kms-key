@@ -16,6 +16,5 @@ resource "aws_kms_key" "key" {
 
 resource "aws_kms_key_policy" "policy" {
   key_id = aws_kms_key.key.id
-  # policy = data.aws_iam_policy_document.key_policy.json
   policy = var.custom_policy != null ? var.custom_policy : data.aws_iam_policy_document.key_policy.json
 }

@@ -1,8 +1,4 @@
 # Variables
-variable "name" {
-  type = string
-}
-
 variable "custom_policy" {
   type    = any
   default = null
@@ -27,6 +23,10 @@ variable "key_config" {
     rotation     = null
     usage        = null
   }
+}
+
+variable "name" {
+  type = string
 }
 
 variable "targets" {
