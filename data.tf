@@ -17,7 +17,7 @@ data "aws_iam_policy_document" "key_policy" {
   }
 
   dynamic "statement" {
-    for_each = { for target in var.targets : target.target_arn => target if target.target_type == "cw_loggroup" }
+    for_each = { for target in var.targets : "default" => target if target.target_type == "cw_loggroup" }
     content {
       actions = [
         "kms:Decrypt",
